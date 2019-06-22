@@ -4,6 +4,7 @@ import { Route, BrowserRouter as Router, Link } from 'react-router-dom';
 import './index.css';
 import App from './Example1';
 import Example2 from './Example2';
+import Example3 from './Example3';
 import * as serviceWorker from './serviceWorker';
 
 const routing = (
@@ -15,10 +16,14 @@ const routing = (
         <li>
           <Link to="/example2">Example2</Link>
         </li>
+        <li>
+          <Link to="/example3">Example3</Link>
+        </li>
       </ul>
     <div>
       <Route path="/" component={App} exact={true} />
       <Route path="/example2" component={Example2} />
+      <Route path="/example3" component={Example3} />
     </div>
   </Router>
 )
