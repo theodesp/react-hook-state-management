@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { createContainer } from 'unstated-next';
-import { render } from 'react-dom';
 
 const useCounter = (initialState = 0) => {
   let [count, setCount] = useState(initialState);

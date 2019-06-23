@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './stores/store';
 import { Route, BrowserRouter as Router, Link } from 'react-router-dom';
 import './index.css';
 import App from './Example1';
 import Example2 from './Example2';
 import Example3 from './Example3';
+import Example4 from './Example4';
 import * as serviceWorker from './serviceWorker';
 
-const routing = (
+const Routes: React.FC = (): JSX.Element => (
   <Router>
     <ul className="menu-bar">
         <li>
@@ -19,16 +22,24 @@ const routing = (
         <li>
           <Link to="/example3">Example3</Link>
         </li>
+        <li>
+          <Link to="/example4">Example4</Link>
+        </li>
       </ul>
     <div>
       <Route path="/" component={App} exact={true} />
       <Route path="/example2" component={Example2} />
       <Route path="/example3" component={Example3} />
+      <Route path="/example4" component={Example4} />
     </div>
   </Router>
 )
 
-ReactDOM.render(routing, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <Routes />
+  </Provider>
+  , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
