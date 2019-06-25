@@ -8,6 +8,8 @@ import App from './Example1';
 import Example2 from './Example2';
 import Example3 from './Example3';
 import Example4 from './Example4';
+import Example5 from './Example5';
+import Example6 from './Example6';
 import * as serviceWorker from './serviceWorker';
 
 const Routes: React.FC = (): JSX.Element => (
@@ -25,12 +27,20 @@ const Routes: React.FC = (): JSX.Element => (
         <li>
           <Link to="/example4">Example4</Link>
         </li>
+        <li>
+          <Link to="/example5">Example5</Link>
+        </li>
+        <li>
+          <Link to="/example6">Example6</Link>
+        </li>
       </ul>
     <div>
       <Route path="/" component={App} exact={true} />
       <Route path="/example2" component={Example2} />
       <Route path="/example3" component={Example3} />
       <Route path="/example4" component={Example4} />
+      <Route path="/example5" component={Example5} />
+      <Route path="/example6" component={Example6} />
     </div>
   </Router>
 )
